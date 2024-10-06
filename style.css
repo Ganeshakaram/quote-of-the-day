@@ -1,50 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-*{
-    .permanent-marker-regular {
-        font-family: "Permanent Marker", cursive;
-        font-weight: 400;
-        font-style: normal;
-      }
+
+* {
+    box-sizing: border-box; 
 }
-body{
-    background-color: rgb(110, 172, 151);
+
+body {
+    background-image: url('nature.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    margin: 0; 
+    font-family: 'Georgia', serif; 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
 }
-.header{
+
+.header {
+    display: flex; 
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
-    text-align: center;
-    background-color: white;
-    padding:50px;
-    margin-left: 350px;
-    margin-right: 350px;
-    margin-top: 200px;
-    height:300px;
-    border-radius: 5%;
-   
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 50px;
+    border-radius: 10px; 
+    max-width: 800px; 
 }
-h1{
-    position: relative;
-    bottom:50px;
-    font-family: "Permanent Marker", bold;
-        font-weight: 500;
-        font-style: normal;
-    background-color: rgb(83, 160, 208);
+
+h1 {
+    font-family: "Permanent Marker", cursive; 
+    font-weight: bold; 
+    font-size: 36px;
+    background-color: rgb(83, 160, 208); 
+    padding: 10px; 
+    border-radius: 5px; 
 }
-#quote,#author{
-    position: relative;
-    bottom:20px;
-    font-family: 'Georgia', serif;
+
+#quote, #author {
     font-size: 24px; 
     font-style: italic;
-    color: #333; 
-   
-    
+    color: white; 
+    text-align: center; 
+    margin: 10px 0; 
 }
-#author{
-    position:relative;
-    color: brown;
-    left:100px;
+
+#author {
+    color: #ffdb58; 
+    margin-top: 5px; 
 }
+
 button {
     background-color: #3498db; 
     color: white; 
@@ -54,10 +60,9 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s ease; 
-    
+    margin: 10px; 
 }
 
 button:hover {
     background-color: #2980b9;
 }
-
