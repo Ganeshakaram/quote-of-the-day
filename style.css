@@ -66,3 +66,20 @@ button {
 button:hover {
     background-color: #2980b9;
 }
+.flex-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.favorite-button {
+    cursor: pointer; 
+    margin: 0 10px; 
+    width: 50px; 
+    height: 50px; 
+    transition: transform 0.2s; 
+}
+
+.favorite-button:hover {
+    transform: scale(1.1); 
+}
