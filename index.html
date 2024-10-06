@@ -13,7 +13,9 @@
         <span id="author">Loading...</span>
         <div class="flex-container">
             <button onclick="getquote(my_url)">New Quote</button>
-            <button onclick="tweet()">tweet</button>
+            <button onclick="tweet()">Tweet</button>
+            <img onclick="addToFavorites()" src="lover.png" width="50" height="50" alt="Favorite" class="favorite-button">
+            <button onclick="showFavorites()">Show Favorites</button>
         </div>
      </div>
 
@@ -22,11 +24,11 @@
     const my_url="https://zenquotes.io/api/random";
     const quote=document.getElementById("quote");
     const author=document.getElementById("author");
+    const favorites = [];
 
     async function getquote(url){
         const response=await fetch(url);
         var data=await response.json();
-        console.log(data);
         quote.innerHTML=data[0].q;
         author.innerHTML=data[0].a;
        
@@ -34,6 +36,26 @@
     getquote(my_url);
     function tweet(){
         window.open("https://twitter.com/intent/tweet?text=" + quote.innerHTML,"Tweet Window, width=600","height=300");
+    }
+    function addToFavorites() {
+        const favoriteQuote = {
+            text: quote.innerHTML,
+            author: author.innerHTML
+        };
+        if (favoriteQuote.text && favoriteQuote.author) {
+            favorites.push(favoriteQuote);
+            alert("Quote added to favorites!");
+        } else {
+            alert("No quote to add!");
+        }
+    }
+    function showFavorites() {
+        if (favorites.length === 0) {
+            alert("No favorites added yet.");
+            return;
+        }
+        let favoriteQuotes = favorites.map((fav, index) => `${index + 1}: "${fav.text}" - ${fav.author}`).join("\n");
+        alert("Favorite Quotes:\n" + favoriteQuotes);
     }
    </script> 
 </body>
